@@ -30,6 +30,9 @@ A hybrid hardware/embedded system that protects backpacks from theft using magne
 | Green LED | 1 | Visual trigger indicator |
 | 3-pin Slide Switch | 1 | Master arm/disarm |
 
+## Firmware
+The complete Arduino C++ code is available here: [firmware/backpack_alarm.ino](firmware/backpack_alarm.ino).
+
 ## Schematic & Simulation Notes
 
 The circuit was first validated in **TinkerCAD** before physical assembly. Since TinkerCAD's library does not contain the exact components used in the physical prototype, the following functionally equivalent substitutes were used to model the logic and behavior:
