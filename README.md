@@ -11,6 +11,7 @@ A hybrid hardware/embedded system that protects backpacks from theft using magne
 4. **Alert:** Arduino triggers a green LED and plays an audio warning through the DFPlayer Mini + 3W speaker.
 ## Prototype Photo
 ![Top View of Prototype](prototype_top_view.png)
+![Schematic](schematic.png)
 
 ## Hardware Components
 | Component | Quantity | Function |
@@ -28,6 +29,18 @@ A hybrid hardware/embedded system that protects backpacks from theft using magne
 | 1kΩ Resistor | 1 | Series protection for DFPlayer TX→RX |
 | Green LED | 1 | Visual trigger indicator |
 | 3-pin Slide Switch | 1 | Master arm/disarm |
+
+## Schematic & Simulation Notes
+
+The circuit was first validated in **TinkerCAD** before physical assembly. Since TinkerCAD's library does not contain the exact components used in the physical prototype, the following functionally equivalent substitutes were used to model the logic and behavior:
+
+| Physical Component (Actual Hardware) | Simulation Substitute (TinkerCAD) | Justification |
+| :--- | :--- | :--- |
+| A3144 Hall Effect Sensors + Magnets | Slide Switches | Both act as digital ON/OFF triggers. The slide switch simulates the magnet passing over the sensor (logic HIGH/LOW). |
+| MPU6050 Accelerometer (I2C) | PIR Motion Sensor | Both provide a digital HIGH output when motion is detected. The simulation focuses on the trigger logic, not the I2C communication protocol. |
+| DFPlayer Mini + 3W Speaker | Piezo Buzzer | Both produce an audible alert when driven by a digital output from the Arduino. The simulation verifies the timing and logic of the alert activation. |
+
+✅ **Physical Validation:** The simulation confirmed the logic gate behavior. The physical prototype was then built using the exact BOM components, with the additional real-world challenges (power spikes, faulty breadboard rails) solved during hardware debugging.
 
 ## Testing & Validation
 - **Simulated zipper opening:** Removed magnets from Hall sensors → LED turned on instantly, confirming logic gate detection.
