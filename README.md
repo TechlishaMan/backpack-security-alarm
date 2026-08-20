@@ -9,6 +9,8 @@ A hybrid hardware/embedded system that protects backpacks from theft using magne
    - MPU6050 IMU detects movement/tilt (I2C path to Arduino).
 3. **Process:** Logic gates (AND + OR) combine signals with the arming switch.
 4. **Alert:** Arduino triggers a green LED and plays an audio warning through the DFPlayer Mini + 3W speaker.
+## Prototype Photo
+![Top View of Prototype](prototype_top_view.png)
 
 ## Hardware Components
 | Component | Quantity | Function |
